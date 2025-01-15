@@ -18,23 +18,25 @@ in
       hacknix = pkgs.mkShell{
         name = "HackNix";
 
-        nativeBuildInputs = [
-          pkgs.exploitdb
-          pkgs.foremost
-          pkgs.gobuster
-          pkgs.go-exploitdb
-          pkgs.hashcat
-          pkgs.hashcat-utils
-          pkgs.john
-          pkgs.nmap
-          pkgs.proxychains
-          pkgs.rustscan
-          pkgs.testdisk
-          pkgs.tor
-          pkgs.tor-browser
-          pkgs.tshark
-          pkgs.wipe
-          pkgs.wireshark
+        nativeBuildInputs = with pkgs; [
+          exploitdb
+          foremost
+          gdb
+          go-exploitdb
+          gobuster
+          hashcat
+          hashcat-utils
+          john
+          nmap
+          proxychains
+          pwndbg
+          rustscan
+          testdisk
+          tor
+          tor-browser
+          tshark
+          wipe
+          wireshark
         ];
 
         NIX_CFLAGS_COMPILE = ''
